@@ -1,9 +1,9 @@
-# terraform-aws-guardduty
+# terraform-aws-guardduty-alerts
 
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-guardduty/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-guardduty/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-guardduty)](https://github.com/DNXLabs/terraform-aws-guardduty/blob/master/LICENSE)
 
-This module creates the "member" side of Guardduty, with the assumption that there will be a admin_account responsible for sending an invite to the member.
+This module creates Guardduty alerts. Those alerts can be an email or slack channel. This module should be used if you have Guardduty already enabled and want to add only alerts.
 
 <!--- BEGIN_TF_DOCS --->
 
