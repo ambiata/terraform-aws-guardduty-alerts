@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_event_rule" "guardduty" {
-  count = var.alarm_sns == "" ? 0 : 1
+  count       = var.sns_topic_name != "" ? 1 : 0
   name        = "guardduty-events"
   description = "GuardDutyEvent"
 #   is_enabled  = var.guardduty_enabled
@@ -18,10 +18,10 @@ PATTERN
 }
 
 resource "aws_cloudwatch_event_target" "guardduty" {
-  count = var.alarm_sns == "" ? 0 : 1
-  rule      = aws_cloudwatch_event_rule.guardduty.name
+  count     = var.sns_topic_name != "" ? 1 : 0
+  rule      = aws_cloudwatch_event_rule.guardduty[0].name
   target_id = "SendToSNS"
-  arn       = aws_sns_topic.default.arn
+  arn       = aws_sns_topic.default[0].arn
 }
 
 
