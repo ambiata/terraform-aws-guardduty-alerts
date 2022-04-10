@@ -18,7 +18,7 @@ variable "alarm_slack_severity" {
 # }
 
 variable "email" {
-  default = ""
+  default     = ""
   description = "Email address to subscribe notification to (optional)"
 }
 

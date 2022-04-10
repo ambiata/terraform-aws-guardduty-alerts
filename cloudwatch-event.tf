@@ -2,8 +2,8 @@ resource "aws_cloudwatch_event_rule" "guardduty" {
   count       = var.sns_topic_name != "" ? 1 : 0
   name        = "guardduty-events"
   description = "GuardDutyEvent"
-#   is_enabled  = var.guardduty_enabled
-#   tags        = var.tags
+  #   is_enabled  = var.guardduty_enabled
+  #   tags        = var.tags
 
   event_pattern = <<PATTERN
 {

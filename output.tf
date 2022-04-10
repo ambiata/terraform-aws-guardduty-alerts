@@ -3,5 +3,5 @@ output "aws_sns_topic" {
 }
 
 output "aws_kms_key" {
-  value       = try(aws_kms_key.sns[0].id, "")
+  value = try(aws_kms_key.sns[0].id, "")
 }
