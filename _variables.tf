@@ -22,6 +22,11 @@ variable "email" {
   description = "Email address to subscribe notification to (optional)"
 }
 
+variable "event_pattern" {
+  default     = ""
+  description = "Event pattern"
+}
+
 variable "sns_topic_name" {
   description = "Topic name (optional - creates SNS topic)"
   default     = ""
